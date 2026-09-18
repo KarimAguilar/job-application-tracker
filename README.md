@@ -1,7 +1,7 @@
 # Job Application Tracker
 
 A Jupyter notebook that turns a copied job posting URL into a clean, normalised row in a Google
-Sheet. Copy a link from LinkedIn or Handshake, run one cell, confirm the fields it pulled, and the
+Sheet. Copy a link from LinkedIn, run one cell, confirm the fields it pulled, and the
 row is written into the spreadsheet.
 
 I built it because keeping a job search organised by hand meant retyping the same nine fields for
