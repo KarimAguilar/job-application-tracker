@@ -1,0 +1,27 @@
+# ---------------------------------------------------------------
+# Google service-account key. NEVER commit this file.
+# Anyone holding it can read and write every sheet the account
+# can reach. If it is ever committed, delete the key in the
+# Google Cloud Console and generate a new one.
+# ---------------------------------------------------------------
+credentials.json
+*credentials*.json
+service_account*.json
+client_secret*.json
+token.json
+*.pem
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
