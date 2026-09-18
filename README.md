@@ -1,7 +1,7 @@
 # Job Application Tracker
 
 A Jupyter notebook that turns a copied job posting URL into a clean, normalised row in a Google
-Sheet. Copy a link from LinkedIn, run one cell, confirm the fields it pulled, and the
+Sheet. Copy a link from LinkedIn and Handshake, run one cell, confirm the fields it pulled, and the
 row is written into the spreadsheet.
 
 I built it because keeping a job search organised by hand meant retyping the same nine fields for
@@ -82,8 +82,8 @@ notebook just asks you to paste the URL instead.
 **This is the part that will not work until you do it, and it cannot be skipped.**
 
 The notebook authenticates to Google as a **service account** — a robot account with its own email
-address and its own private key. **No credentials are included in this repository, and none ever will
-be.** You have to create your own. Ten minutes, once.
+address and its own private key. **No credentials are included in this repository**, you have to create
+your own following the instructions bellow (please don't skip any step or it will not work): 
 
 ### 1. Create the service account and download its key
 
@@ -100,10 +100,6 @@ be.** You have to create your own. Ten minutes, once.
 
 ### 2. Share your spreadsheet with the service account
 
-This is the step people miss, and it is the reason the notebook throws a permissions error.
-
-A service account is a separate Google user. It cannot see your spreadsheet just because you own it.
-
 1. Open `credentials.json` in a text editor and find the `"client_email"` value. It looks like
    `tracker-bot@my-project-123456.iam.gserviceaccount.com`.
 2. Open your spreadsheet in Google Sheets, click **Share**, paste that email address, set it to
@@ -114,16 +110,12 @@ That's it. The notebook can now read and write that sheet.
 > **If the spreadsheet does not exist yet**, the notebook will offer to create one for you and ask
 > for your Gmail address so it can share it back with you. Be aware that a sheet created this way is
 > owned by the service account and lives in *its* Drive, not yours. Creating the sheet yourself and
-> sharing it with the service account is the cleaner path.
+> sharing it with the service account is the best option.
 
 ### Keep the key private
 
 `credentials.json` is listed in `.gitignore` and will not be committed. Treat it like a password:
 anyone holding that file can read and write every Google Sheet the service account has access to.
-
-If you ever commit it by accident, go straight to the Google Cloud Console, delete that key under
-the service account's **Keys** tab, and generate a new one. Removing the file in a later commit is
-not enough — it stays in the repository's history.
 
 ---
 
@@ -235,8 +227,6 @@ Once every source has been merged, a final pass applies the rules:
 | `.gitignore` | Keeps `credentials.json` and local clutter out of version control |
 | `README.md` | This file |
 
-`credentials.json` is deliberately **not** in this repository. See the setup section above.
-
 ---
 
 ## Limitations
@@ -244,8 +234,5 @@ Once every source has been merged, a final pass applies the rules:
 - **LinkedIn and Handshake only.** `detect_site()` recognises those two hosts; anything else leaves
   the `Website` column blank for you to fill in.
 - **Handshake always requires the paste step.** This is a login wall, not a bug.
-- **LinkedIn's public markup changes.** The guest job card is a public endpoint that LinkedIn can
-  restructure at any time; if fields start coming back empty, the selectors in
-  `parse_linkedin_topcard()` are the place to look.
 - **The confirmation prompt is not optional.** Every field is shown before anything is written,
-  which is deliberate — scraped values are a starting point, not a source of truth.
+  scraped values may be wrong, so you will have to manually write the information.
