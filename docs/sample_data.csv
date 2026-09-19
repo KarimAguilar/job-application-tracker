@@ -1,0 +1,8 @@
+Position,Company,Type,Location,Salary,Website,Job URL,Date Applied,Status
+Data Analyst Intern,Northwind Analytics,Internship,"Seattle, WA",$24.00/hr,LinkedIn,https://example.com/jobs/1001,3-Sep,Applied
+Operations Coordinator,Harbor Point Logistics,Part-time,"Tacoma, WA",$21.50/hr,Handshake,https://example.com/jobs/1002,5-Sep,Interview
+Business Intelligence Analyst,Cascade Data Group,Full-time,"Bellevue, WA","$78,000.00 - $92,000.00/yr",LinkedIn,https://example.com/jobs/1003,8-Sep,Rejected
+Research Assistant,Lumen Research Institute,Part-time,"Seattle, WA",$22.75/hr,Handshake,https://example.com/jobs/1004,10-Sep,Applied
+Reporting Analyst,Fairview Systems,Remote,N/A,$30.00 - $36.00/hr,LinkedIn,https://example.com/jobs/1005,12-Sep,Applied
+Data Quality Assistant,Meridian Public Library,Part-time,"Portland, OR",$20.90/hr,Handshake,https://example.com/jobs/1006,15-Sep,Interview
+Junior Data Engineer,Stonebridge Labs,Full-time,"Seattle, WA","$85,000.00/yr",LinkedIn,https://example.com/jobs/1007,16-Sep,Applied
