@@ -39,7 +39,7 @@ table inside it is named **`JobApplications`** — **yours can be named anything
 
 > **The screenshot above contains sample data only.** Every row is fabricated for illustration —
 > the companies, links, pay rates and statuses are invented and none of them represent a real
-> application. The same rows are in [`sample_data.csv`](sample_data.csv) if you want to load them
+> application. The same rows are in [`docs/sample_data.csv`](sample_data.csv) if you want to load them
 > into a sheet of your own while setting things up.
 
 What matters is that the headers sit in **row 1, in columns A through I, in this exact order**. The
